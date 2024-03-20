@@ -47,6 +47,13 @@ public class Main {
 
         System.out.println("<9 uzduotis>");
         staciakampis(5,50);
+
+        System.out.println("<10 uzduotis>");
+        tekstas("Šiandien labai graži diena");
+
+        System.out.println("<11 uzduotis>");
+        sadrav("Šiandien labai graži diena");
+
     }
         public static void pirmaUzd(int kint1, int kint2){
             System.out.println("The sum is: " + (kint1 + kint2));
@@ -96,7 +103,7 @@ public class Main {
 // 8 uzduotis
 //    Sukurkite Funkciją kuri priimtų 6tos užduoties masyvą ir gražintų jos skaičių vidurkį (double).
 public static double masyvoVidurkis (int [] masyvas){
-    return Arrays.stream(masyvas).sum() / masyvas.length;
+    return (double)Arrays.stream(masyvas).sum() / masyvas.length;
 }
 //9 uzduotis
 //Sukurkite Funkciją kuri priimtų du int skaičius ir atspausdintų stačiakampį
@@ -114,16 +121,50 @@ public static void staciakampis(int eilutes, int stulpeliai) {
 //    atspausdintų kiek jame yra raidžių(simbolių) ir tarpų.
 //    Sakinys - “Šiandien labai graži diena”. (kodas turi veikti padavus bet kokį sakinį)
 
-public static void tekstas (String sakinys){
+//    public static void tekstas(String sakinys) {
+//        sakinys = sakinys.replaceAll("ą,č,ę,ė,į,š,ų,ū,ž","a,c,e,e,i,s,u,u,z");
+//        int letterCount = 0;
+//        int spaceCount = 0;
+//        for (char letter = 'a'; letter <= 'z'; letter++) {
+//            for (int i = 0; i < sakinys.length(); i++) {
+//                if (sakinys.charAt(i) == letter) {
+//                    letterCount++;
+//                }
+//            }
+//            spaceCount = sakinys.length() - letterCount;
+//        }
+//        System.out.println("Tekste yra " + letterCount + " raidziu ir " + spaceCount + " tarpu");
+//    }
 
+    public static void tekstas(String sakinys) {
+        int spaceCount = 0;
+            for (int i = 0; i < sakinys.length(); i++) {
+                if (sakinys.charAt(i) == ' ') {
+                    spaceCount++;
+                }
+            }
+           int letterCount = sakinys.length() - spaceCount;
+        System.out.println("Tekste yra " + letterCount + " raidziu ir " + spaceCount + " tarpu");
+    }
+
+// 11 uzduotis
+//Sukurkite Funkciją kuri priimtų sakinį, jį užkoduotų ir grąžintų.
+// Kodavimas - sakinį apsukame iš kitos pusės. Pvz “Naglis” turi gautis “silgaN”.
+
+//    public static void sadrav (String sakinys){
+//        for (int i = 0; i < sakinys.length(); i++) {
+//            for (int j = 0; j < sakinys.length(); j++) {
+//                if(i + j == sakinys.length()-1){
+//                    System.out.print(sakinys[i]);
+//                }
+//            }
+//        }
+//    }
+
+public static void sadrav (String sakinys){
+    for (int i = sakinys.length()-1; i >= 0 ; i--) {
+        System.out.print(sakinys.charAt(i));
+    }
 }
-
-
-
-
-
-
-
-
 
 }
