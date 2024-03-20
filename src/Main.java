@@ -20,7 +20,7 @@ public class Main {
 // Funkcija gražina skaičių sandaugą.;
 // Gautą reikšmę atspausdinkite.
         System.out.println("<3 uzduotis>");
-        System.out.println(trecUzd(6,5));
+        System.out.println(trecUzd(6, 5));
 
 // 4 uzduotis
 //Sukurkite Funkciją kuri priima int[] tipo kintamąį,
@@ -33,10 +33,10 @@ public class Main {
 // Sukurkite Funkciją kuri priima du int tipo kintamuosius,
 // min ir max reikšmėms nustatyti ir sugeneruoja random int skaičių ir jį gražintų.
         System.out.println("<5 uzduotis>");
-        System.out.println(penktUzd(40,57));
+        System.out.println(penktUzd(40, 57));
 
         System.out.println("<6 uzduotis>");
-        int [] randArr = randArr (5, 9, 5);
+        int[] randArr = randArr(5, 9, 5);
         printArr(randArr);
 
         System.out.println("<7 uzduotis>");
@@ -46,13 +46,27 @@ public class Main {
         System.out.println(masyvoVidurkis(randArr));
 
         System.out.println("<9 uzduotis>");
-        staciakampis(5,50);
+        staciakampis(5, 50);
 
         System.out.println("<10 uzduotis>");
         tekstas("Šiandien labai graži diena");
 
         System.out.println("<11 uzduotis>");
         sadrav("Šiandien labai graži diena");
+
+        System.out.println("<sunkesniu 1 uzduotis>");
+        apgaubimas("vardas");
+
+        System.out.println("<sunkesniu 2 uzduotis>");
+        generatedRandomText (10);
+        printArr(generatedRandomText);
+//        printRandomSymbols(10);
+
+
+
+
+
+
 
     }
         public static void pirmaUzd(int kint1, int kint2){
@@ -136,15 +150,15 @@ public static void staciakampis(int eilutes, int stulpeliai) {
 //        System.out.println("Tekste yra " + letterCount + " raidziu ir " + spaceCount + " tarpu");
 //    }
 
-    public static void tekstas(String sakinys) {
+    public static void tekstas(String text) {
         int spaceCount = 0;
-            for (int i = 0; i < sakinys.length(); i++) {
-                if (sakinys.charAt(i) == ' ') {
+            for (int i = 0; i < text.length(); i++) {
+                if (text.charAt(i) == ' ') {
                     spaceCount++;
                 }
             }
-           int letterCount = sakinys.length() - spaceCount;
-        System.out.println("Tekste yra " + letterCount + " raidziu ir " + spaceCount + " tarpu");
+           int letterCount = text.length() - spaceCount;
+        System.out.println("Tekste yra " + letterCount + " raidzes ir " + spaceCount + " tarpai");
     }
 
 // 11 uzduotis
@@ -165,6 +179,61 @@ public static void sadrav (String sakinys){
     for (int i = sakinys.length()-1; i >= 0 ; i--) {
         System.out.print(sakinys.charAt(i));
     }
+    System.out.println();
 }
+
+// sunkesniu 1 uzduotis
+//Parašykite funkciją, kurios argumentas būtų tekstas,
+// kuris būtų atspausdinamas konsolėje pridedant “---” pradžioje ir gale. PVZ (---labas---)
+
+    public static void apgaubimas (String tekstas){
+        System.out.println("---" + tekstas + "---");
+    }
+
+    // sunkesniu 2 uzduotis
+    //Sugeneruokite atsitiktinį stringą iš raidžių ir skaičių (10 simbolių).
+    // Atspausdinkite simbolius stulpeliu. Jei tai skaičius apgaubkite “ [ 7 ]”.
+    // Jei skaičiai eina keli iš eilės, apgaubkite juos kartu. [75].
+public static void generatedRandomText (int length) {
+    for (int i = 0; i <= length; i++) {
+        String raidesNumeriai = "ABCDEFGHIKLMNOPQRSTVXYZ0123456789";
+        int randomPosition = (int) (Math.random() * raidesNumeriai.length());
+        char randomSymbol = raidesNumeriai.charAt(randomPosition);
+        System.out.println(randomSymbol);
+    }
+}
+//    public static void printRandomSymbols(int stringLength) {
+//        for (int i = 0; i <= stringLength; i++) {
+//            String raidesNumeriai = "ABCDEFGHIKLMNOPQRSTVXYZ0123456789";
+//            int randomPosition = (int) (Math.random() * raidesNumeriai.length());
+//            char randomSymbol = raidesNumeriai.charAt(randomPosition);
+//            int countNumbers = 0;
+//            if (Character.isDigit(randomSymbol)) {
+//                countNumbers++;
+//                if (countNumbers == 1) {
+//                    System.out.println("[" + randomSymbol[i] + "]");
+//                }
+//            } else {
+//                countNumbers = 0;
+//                System.out.println(randomSymbol);
+//            }
+//        }
+//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
