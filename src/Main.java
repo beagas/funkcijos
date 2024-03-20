@@ -44,6 +44,9 @@ public class Main {
 
         System.out.println("<8 uzduotis>");
         System.out.println(masyvoVidurkis(randArr));
+
+        System.out.println("<9 uzduotis>");
+        staciakampis(5,50);
     }
         public static void pirmaUzd(int kint1, int kint2){
             System.out.println("The sum is: " + (kint1 + kint2));
@@ -78,7 +81,7 @@ public class Main {
     public static int [] randArr(int min, int max, int length) {
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
-            array[i] = (int) (min + Math.round(Math.random() * (max - min)));
+            array[i] = (int) (min + Math.random() * (max - min));
         }
         return array;
     }
@@ -94,8 +97,29 @@ public class Main {
 //    Sukurkite Funkciją kuri priimtų 6tos užduoties masyvą ir gražintų jos skaičių vidurkį (double).
 public static double masyvoVidurkis (int [] masyvas){
     return Arrays.stream(masyvas).sum() / masyvas.length;
-//    ((Arrays.stream(masyvas).sum())/(masyvas.length))
 }
+//9 uzduotis
+//Sukurkite Funkciją kuri priimtų du int skaičius ir atspausdintų stačiakampį
+// užpildytą žvaigždutėmis. Pirmas int - išoriniam ciklui, antras vidiniam.
+public static void staciakampis(int eilutes, int stulpeliai) {
+        for (int p = 0; p < eilutes; p++) {
+        for (int i = 0; i < stulpeliai; i++) {
+            System.out.print("*  ");
+        }
+        System.out.println();
+    }
+}
+// 10 uzduotis
+//    Sukurkite Funkciją kuri priimtų sakinį kaip kintamąjį ir
+//    atspausdintų kiek jame yra raidžių(simbolių) ir tarpų.
+//    Sakinys - “Šiandien labai graži diena”. (kodas turi veikti padavus bet kokį sakinį)
+
+public static void tekstas (String sakinys){
+
+}
+
+
+
 
 
 
